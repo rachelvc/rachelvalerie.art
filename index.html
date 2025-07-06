@@ -24,15 +24,11 @@
     h1, h2, h3, h4, button {
       font-family: 'Playfair Display', serif;
     }
-    header {
-      text-align: center;
-      background-color: #FFE6E2;
-      padding: 2rem;
-    }
-    header img {
-      max-width: 400px;
-      height: auto;
-    }
+    .hero-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
     .flow-form {
       padding: 2rem;
       background-color: #FEFBF4;
@@ -117,9 +113,12 @@
       border-radius: 0.5rem;
     }
     footer {
-      background-color: #FEFBF4;
-      text-align: center;
-      padding: 2rem 1rem;
+  background-image: url('images/artbanner.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #3A2C80;
     }
 
     @media (max-width: 600px) {
@@ -151,9 +150,10 @@
 </head>
 <body>
 
-<header>
-  <img src="images/rachelValerie.png" alt="Rachel Valerie Art logo">
+<header class="hero-header">
+  <img src="images/artheader.png" alt="Rachel Valerie Art header" />
 </header>
+
 
 <section class="flow-form" id="flowform">
   <h2>The Flow and Form Collection</h2>
@@ -226,7 +226,7 @@
     <a href="https://instagram.com/rachelvalerieart">Instagram</a>
   </p>
   <p>Contact: hello@rachelvalerie.art</p>
-  <img src="images/artlogo.png" alt="RV Art logo" style="height: 40px;">
+  <img src="images/artlogo.png" alt="RV Art logo" style="height: 50px;">
 
   <!-- MailerLite Universal -->
   <script>
