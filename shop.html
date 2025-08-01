@@ -15,157 +15,108 @@
   <link rel="icon" type="image/png" href="artlogo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet"/>
   <style>
-    .nav-buttons {
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Playfair Display', serif;
-}
-
-.nav-btn {
-  background-color: #3A2C80;
-  color: #FEFBF4;
-  text-decoration: none;
-  padding: 12px 24px;
-  margin: 10px;
-  display: inline-block;
-  border-radius: 8px;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-btn:hover {
-  background-color: #5a4db8;
-}
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #FFE6E2;
       color: #3A2C80;
     }
-    h1, h2, h3, h4, button {
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin: 2rem 0;
       font-family: 'Playfair Display', serif;
     }
-    .hero-header img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+
+    .nav-btn {
+      background-color: #3A2C80;
+      color: #FEFBF4;
+      text-decoration: none;
+      padding: 12px 24px;
+      margin: 10px;
+      display: inline-block;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #5a4db8;
+    }
+
+    .shop-section,
     .flow-form {
-      padding: 2rem;
+      padding: 2rem 1rem;
       background-color: #FEFBF4;
       text-align: center;
     }
+
+    .shop-intro {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #3A2C80;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      justify-items: center;
     }
+
     .item img {
       width: 100%;
       max-width: 250px;
       border-radius: 10px;
       border: 4px solid #fff;
     }
-    .item h3 {
-      margin: 0.5rem 0 0;
-    }
-    .item .price {
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .item .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+
     .buy-button {
-      padding: 10px;
+      padding: 10px 16px;
       background-color: #3A2C80;
       color: white;
       border: none;
       border-radius: 5px;
       font-family: 'Playfair Display', serif;
-      font-size: 14px;
+      font-size: 16px;
       text-decoration: none;
+      margin-top: 0.5rem;
+      display: inline-block;
     }
-    .about-section {
+
+    .btn-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      padding: 2rem;
-      background-color: #FFE6E2;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
-    .about-section img {
-      max-width: 300px;
-      border-radius: 1rem;
-    }
-    .about-section div {
-      flex: 1;
-      min-width: 250px;
-    }
-    .video-section {
-      text-align: center;
-      padding: 2rem;
-      background-color: #FEFBF4;
-    }
-    video {
-      width: 80%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 1rem;
-    }
-    .image-stack {
-      position: relative;
-      margin: 2rem auto;
-      width: 300px;
-    }
-    .image-stack img:first-child {
-      width: 100%;
-      border-radius: 1rem;
-    }
-    .image-stack img:last-child {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 100px;
-      border: 3px solid #fff;
-      border-radius: 0.5rem;
-    }
+
     footer {
-  background-image: url('images/artbanner.png');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 4rem 1rem;
-  color: #3A2C80;
+      background-image: url('images/artbanner.png');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: #3A2C80;
     }
+.hero-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
     @media (max-width: 600px) {
       .grid {
         grid-template-columns: 1fr;
         padding: 1rem;
-      }
-
-      .about-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .about-section img {
-        width: 100%;
-        max-width: 250px;
-      }
-
-      .image-stack {
-        width: 90%;
-      }
-
-      video {
-        width: 100%;
       }
     }
   </style>
@@ -175,22 +126,46 @@
 <header class="hero-header">
   <img src="images/artheader.png" alt="Rachel Valerie Art header" />
 </header>
-<header></header>
 <div class="nav-buttons">
   <a href="index.html" class="nav-btn">Home</a>
   <a href="shop.html" class="nav-btn">Shop</a>
   <a href="gallery.html" class="nav-btn">Gallery</a>
 </div>
-<header></header>
 
-<section class="flow-form" id="flowform">
+<section class="shop-section">
+  <h2>Flow and Form Clothing</h2>
+  <p style="text-align:center; color:#3A2C80; font-style:italic; max-width:600px; margin:1rem auto;">
+  🚧 Please note: This shop is currently in test mode. Products are not final and may be subject to change. Back end testing and automatic orders are still ongoing, If you have any questions or issues, feel free to <a href="mailto:hello@rachelvalerie.art" style="color:#3A2C80; text-decoration:underline;">email me</a>. Thank you for your patience!
+</p>
+
+  <p class="shop-intro">Wear your favourite artwork – printed on soft, high-quality fabric designed for flow, comfort, and creative energy.</p>
+  <div class="grid">
+    <div class="item">
+      <img src="images/dreamscape-tank.jpg" alt="Dreamscape Tank Top">
+      <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/dreamscape-art-tank-top/">Dreamscape Tank £19.99</a>
+    </div>
+     <div class="item">
+      <img src="images/seedenergy-tank.jpg" alt="Seed Energy Tank Top">
+      <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/seed-energy-art-tank-top/">Seed Energy Tank £19.99</a>
+    </div>
+    <div class="item">
+      <img src="images/glow-tank.jpg" alt="Glow Tank Top">
+      <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/glow-art-tank-top/">Glow Tank £19.99</a>
+    </div>
+    <div class="item">
+      <img src="images/momentum-tank.jpg" alt="Momentum Tank Top">
+      <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/momentum-art-tank-top/">Momentum Tank £19.99</a>
+    </div>
+  </div>
+</section>
+
+<section class="flow-form">
   <h2>The Flow and Form Collection</h2>
   <p>Alchemy led Art – Inspired by Nature</p>
   <div class="grid">
     <div class="item">
       <img src="images/Glow.png" alt="Glow art print by Rachel Valerie">
       <h3>Glow</h3>
-      
       <div class="btn-group">
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/glow-art-print/">8x10 £14.99</a>
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/glow-12x16in/">12x16 £19.99</a>
@@ -199,7 +174,6 @@
     <div class="item">
       <img src="images/Momentum.png" alt="Momentum art print by Rachel Valerie">
       <h3>Momentum</h3>
-      
       <div class="btn-group">
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/momentum-art-print/">8x10 £14.99</a>
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/momentum-12x16in/">12x16 £19.99</a>
@@ -208,7 +182,6 @@
     <div class="item">
       <img src="images/Dreamscape.png" alt="Dreamscape art print by Rachel Valerie">
       <h3>Dreamscape</h3>
-      
       <div class="btn-group">
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/dreamscape-art/">8x10 £14.99</a>
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/dreamscape-12x16in/">12x16 £19.99</a>
@@ -217,7 +190,6 @@
     <div class="item">
       <img src="images/SeedEnergy.png" alt="Seed Energy art print by Rachel Valerie">
       <h3>Seed Energy</h3>
-      
       <div class="btn-group">
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/seedenergy-art-print/">8x10 £14.99</a>
         <a class="buy-button" href="https://rachelvalerieart.thrivecart.com/seed-energy-12x16in/">12x16 £19.99</a>
@@ -225,7 +197,6 @@
     </div>
   </div>
 </section>
-
 
 <footer>
   <p>Follow me on social media:</p>
@@ -235,8 +206,6 @@
   </p>
   <p>Contact: hello@rachelvalerie.art</p>
   <img src="images/artlogo.png" alt="RV Art logo" style="height: 80px;">
-
-  <!-- MailerLite Universal -->
   <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
     l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],
@@ -244,9 +213,7 @@
     ml('account', '1566151');
   </script>
   <div class="ml-embedded" data-form="T1xpm2"></div>
-  <!-- End MailerLite Universal -->
 </footer>
 
 </body>
 </html>
-
