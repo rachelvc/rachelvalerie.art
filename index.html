@@ -2,95 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rachel Valerie Art</title>
-  <meta name="description" content="Discover the nature-inspired artwork of Rachel Valerie. Shop original prints and learn about the artist behind the creations.">
-  <meta name="keywords" content="Rachel Valerie Art, Nature Art Prints, Flow and Form Collection, Buy Art Online, Emotional Art, Handmade Prints">
-  <meta name="author" content="Rachel Valerie">
-  <meta property="og:title" content="Rachel Valerie Art" />
-  <meta property="og:description" content="Flow and Form Collection – Alchemy-led Art Inspired by Nature." />
-  <meta property="og:image" content="https://rachelvalerie.art/path-to-a-featured-image.jpg" />
-  <meta property="og:url" content="https://rachelvalerie.art" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/png" href="artlogo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Nature-inspired artwork by Rachel Valerie. Shop original prints and explore soulful, alchemy-led art." />
+  <meta name="keywords" content="Rachel Valerie Art, Nature Art, Flow and Form, Buy Art, Emotional Art, Prints" />
+  <meta name="author" content="Rachel Valerie" />
+  <link rel="icon" href="artlogo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
   <style>
-    
-    .nav-buttons {
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Playfair Display', serif;
-}
-
-.nav-btn {
-  background-color: #3A2C80;
-  color: #FEFBF4;
-  text-decoration: none;
-  padding: 12px 24px;
-  margin: 10px;
-  display: inline-block;
-  border-radius: 8px;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-btn:hover {
-  background-color: #5a4db8;
-}
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #FFE6E2;
       color: #3A2C80;
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+    }
+    body.loaded {
+      opacity: 1;
     }
     h1, h2, h3, h4, button {
       font-family: 'Playfair Display', serif;
     }
     .hero-header img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-    .flow-form {
-      padding: 2rem;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    nav.nav-buttons {
       background-color: #FEFBF4;
       text-align: center;
+      padding: 1rem 0;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .item img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 10px;
-      border: 4px solid #fff;
-    }
-    .item h3 {
-      margin: 0.5rem 0 0;
-    }
-    .item .price {
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .item .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .buy-button {
-      padding: 10px;
+    .nav-btn {
       background-color: #3A2C80;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-family: 'Playfair Display', serif;
-      font-size: 14px;
+      color: #FEFBF4;
       text-decoration: none;
+      padding: 12px 24px;
+      margin: 10px;
+      display: inline-block;
+      border-radius: 8px;
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .nav-btn:hover {
+      background-color: #5a4db8;
+      transform: scale(1.05);
+    }
+    .intro {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .about-section {
       display: flex;
@@ -116,7 +88,6 @@
     video {
       width: 80%;
       max-width: 600px;
-      height: auto;
       border-radius: 1rem;
     }
     .image-stack {
@@ -137,98 +108,91 @@
       border-radius: 0.5rem;
     }
     footer {
-  background-image: url('images/artbanner.png');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 4rem 1rem;
-  color: #3A2C80;
+      background-image: url('images/artbanner.png');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: #3A2C80;
     }
-
     @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-
       .about-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
-
       .about-section img {
         width: 100%;
         max-width: 250px;
       }
-
       .image-stack {
         width: 90%;
       }
-
       video {
         width: 100%;
       }
     }
   </style>
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
 <body>
+  <header class="hero-header">
+    <img src="images/artheader.png" alt="Rachel Valerie Art header" />
+  </header>
 
-<header class="hero-header">
-  <img src="images/artheader.png" alt="Rachel Valerie Art header" />
-</header>
-<header></header>
-<div class="nav-buttons">
-  <a href="index.html" class="nav-btn">Home</a>
-  <a href="shop.html" class="nav-btn">Shop</a>
-  <a href="gallery.html" class="nav-btn">Gallery</a>
-</div>
-<header></header>
-<section class="about-section">
-  <img src="images/biopic.png" alt="Portrait of Rachel Valerie, hard at work">
-  <div>
-    <p>I grew up sketching cartoons and animals, and learned watercolour from my uncle Jack. Although I dropped out of art college and shifted to a hair and beauty apprenticeship—because let’s face it, art didn’t seem like a way to pay the bills—I never stopped creating.</p>
-    <p>Art has always been my way to process emotions and reflect the beauty I see in the natural world. I’ve explored tattoo design, woodwork, resin, and wire pendants. Now, I’m building the life I dreamed of—turning my passion into income. My work captures feelings more than just images, inspired by nature and adventure.</p>
-    <p>My work is deeply emotional, a reflection of my own healing, wonder, and connection to nature. I don't just paint pretty things, I create art that *feels*. Art that calms the chaos. Art that reminds you who you really are.</p> 
-    <p>If you're someone who loves earthy tones, soft lines, natural rhythms and soul-deep inspiration, you're in the right place. These pieces are made for your home, and your heart.</p>
-    <p>Every artwork is designed to bring a moment of peace, reflection, and beauty into your space. Whether you're gifting or decorating, I hope you find a piece that speaks to you.</p>
-  
+  <nav class="nav-buttons">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="shop.html" class="nav-btn">Shop</a>
+    <a href="gallery.html" class="nav-btn">Gallery</a>
+  </nav>
+
+  <section class="intro">
+    <h2>Art that Calms the Chaos</h2>
+    <p>Earthy, emotional, alchemy-led art inspired by nature, spirit and wonder.</p>
+  </section>
+
+  <section class="about-section">
+    <img src="images/biopic.png" alt="Portrait of Rachel Valerie, hard at work">
+    <div>
+      <p>I grew up sketching cartoons and animals, and learned watercolour from my uncle Jack. Although I dropped out of art college and shifted to a hair and beauty apprenticeship—because let’s face it, art didn’t seem like a way to pay the bills—I never stopped creating.</p>
+      <p>My work is deeply emotional, a reflection of my own healing, wonder, and connection to nature. I don't just paint pretty things — I create art that *feels*. Art that calms the chaos. Art that reminds you who you really are.</p>
+      <p>If you're someone who loves earthy tones, soft lines, natural rhythms and soul-deep inspiration, you're in the right place. These pieces are made for your home, and your heart.</p>
+      <p>Every artwork is designed to bring a moment of peace, reflection, and beauty into your space. Whether you're gifting or decorating, I hope you find a piece that speaks to you.</p>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <h2>Coming Soon</h2>
+    <video controls autoplay muted loop>
+      <source src="videos/coming-soon.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <div class="image-stack">
+    <img src="images/artme.png" alt="Rachel Valerie with her artwork">
+    <img src="images/memyart.png" alt="Rachel Valerie art piece overlay">
   </div>
-</section>
 
-<section class="video-section">
-  <h2>Coming Soon</h2>
-  <video controls autoplay muted loop>
-    <source src="videos/coming-soon.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
-
-<div class="image-stack">
-  <img src="images/artme.png" alt="Rachel Valerie with her artwork">
-  <img src="images/memyart.png" alt="Rachel Valerie art piece overlay">
-</div>
-
-<footer>
-  <p>Follow me on social media:</p>
-  <p>
-    <a href="https://facebook.com/rachelvalerieart">Facebook</a> 
-    <a href="https://instagram.com/rachelvalerieart">Instagram</a>
-  </p>
-  <p>Contact: hello@rachelvalerie.art</p>
-  <img src="images/artlogo.png" alt="RV Art logo" style="height: 80px;">
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
-    l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],
-    n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1566151');
-  </script>
-  <div class="ml-embedded" data-form="T1xpm2"></div>
-  <!-- End MailerLite Universal -->
-</footer>
-
+  <footer>
+    <p>Follow me on social media:</p>
+    <p>
+      <a href="https://facebook.com/rachelvalerieart">Facebook</a>
+      <a href="https://instagram.com/rachelvalerieart">Instagram</a>
+    </p>
+    <p>Contact: hello@rachelvalerie.art</p>
+    <img src="images/artlogo.png" alt="RV Art logo" style="height: 80px;">
+    <script>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+      l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],
+      n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '1566151');
+    </script>
+    <div class="ml-embedded" data-form="T1xpm2"></div>
+  </footer>
 </body>
 </html>
-
