@@ -15,6 +15,28 @@
   <link rel="icon" type="image/png" href="artlogo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet"/>
   <style>
+    .nav-buttons {
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-btn {
+  background-color: #3A2C80;
+  color: #FEFBF4;
+  text-decoration: none;
+  padding: 12px 24px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #5a4db8;
+}
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -153,11 +175,13 @@
 <header class="hero-header">
   <img src="images/artheader.png" alt="Rachel Valerie Art header" />
 </header>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="shop.html">Shop</a>
-</nav>
+<header></header>
+<div class="nav-buttons">
+  <a href="index.html" class="nav-btn">Home</a>
+  <a href="shop.html" class="nav-btn">Shop</a>
+  <a href="gallery.html" class="nav-btn">Gallery</a>
+</div>
+<header></header>
 
 <section class="flow-form" id="flowform">
   <h2>The Flow and Form Collection</h2>
